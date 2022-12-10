@@ -40,12 +40,12 @@ The most powerful Aging model that exists today receives an input face image and
 
 * ### CycleGAN
 
-Aging
+** Aging
 
-<br/><img src='/images/aging.png'>
+<br/><img src='/images/aging.png' width="500" height="600">
 
-De-aging
-<br/><img src='/images/de-aging.png'>
+** De-aging
+<br/><img src='/images/de-aging.png' width="50" height="60">
 
 * ### IPCGAN
 
