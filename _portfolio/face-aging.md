@@ -42,18 +42,18 @@ The most powerful Aging model that exists today receives an input face image and
 
 Aging
 
-[aging](../images/aging.png)
+![aging](../images/aging.png)
 
 De-aging
-[de-aging](../images/de-aging.png)
+![de-aging](../images/de-aging.png)
 
 * ### IPCGAN
 
-[IPCGAN-3example](../images/face-aging-cover.png)
+![IPCGAN-3example](../images/face-aging-cover.png)
 
 * ### Style-based Regression Model
 
-[Style-example](../images/Style-based-example.png)
+![Style-example](../images/Style-based-example.png)
 
 ## Evaluation of CycleGAN and IPCGAN 
 
