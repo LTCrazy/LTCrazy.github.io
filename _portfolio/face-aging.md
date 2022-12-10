@@ -15,20 +15,18 @@ In the following project, we explore 3 GANs architectures: CycleGAN, IPCGAN, and
 ## Dataset and Preprocessing 
 
 We are using [Cross-Age Reference Coding for the Age-Invariant Face Recognition and Retrieval](https://bcsiriuschen.github.io/CARC/) dataset. The dataset contains images of celebrities taken during different years of their careers, allowing us to track how their faces have changed over the years. Dataset contains more than 163,000 images. However, many examples need to be corrected: the name of the celebrity is incorrect, the face is hidden, etc. For that reason, we apply a preprocessing step to clean the pictures by checking if the eyes, nose, and mouth are clearly visible. After that, we align the face by the angle between the nose and eyes, evening the examples across the dataset. The examples of pictures after the dataset is cleaned are provided below.
-
-![dataset-example](https://github.com/LTCrazy/LTCrazy.github.io/blob/master/images/dataset-example.png)
+<br/><img src='/images/dataset-example.png' width="600">
 
 ## Modeling
 
 * ### [CycleGAN](https://arxiv.org/abs/1703.10593)
 
-<br/><img src='/images/CycleGAN.png'>
+<br/><img src='/images/CycleGAN.png' width="800">
 
 For cycleGAN, we filtered the faces younger than 35 and older than 65. After that, we create corresponding pairs and use them as input for the model. Correspondingly, we are training GAN-s that are connected via cycle-consistency loss (as shown in the picture. Eventually, we are getting to generators, the one that ages a person and the other one, which de-ages.
 
 * ### [IPCGAN](https://ieeexplore.ieee.org/document/8578926)
-
-<br/><img src='/images/IPCGAN.png'>
+<br/><img src='/images/IPCGAN.png' width="800">
 
 IPCGAN is more challenging to train than CycleGAN since, for each iteration, we are generating 5 fake images corresponding to five progressing aging groups (20+,30+,40+,50+,60+). IPCGAN contains an additional age classifier that ensures that generated image falls into the target age. The value of IPCGAN is that it allows us to specify the exact age group we want our generated image to correspond to, making the model more flexible than CycleGAN.
 
@@ -40,20 +38,17 @@ The most powerful Aging model that exists today receives an input face image and
 
 * ### CycleGAN
 
-** Aging
+* * Aging
+<br/><img src='/images/aging.png' width="300">
 
-<br/><img src='/images/aging.png' width="500" height="600">
-
-** De-aging
-<br/><img src='/images/de-aging.png' width="50" height="60">
+* * De-aging
+<br/><img src='/images/de-aging.png' width="300">
 
 * ### IPCGAN
-
-<br/><img src='/images/face-aging-cover.png'>
+<br/><img src='/images/face-aging-cover.png' width="800">
 
 * ### Style-based Regression Model
-
-<br/><img src='/images/Style-based-example.png'>
+<br/><img src='/images/Style-based-example.png' width="800">
 
 ## Evaluation of CycleGAN and IPCGAN 
 
