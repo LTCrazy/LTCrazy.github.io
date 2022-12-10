@@ -22,7 +22,7 @@ We are using [Cross-Age Reference Coding for the Age-Invariant Face Recognition 
 
 * ### [CycleGAN]()
 
-![CycleGAN](/LTCrazy.github.io/images/CycleGAN.png)
+![CycleGAN](../images/CycleGAN.png)
 
 For cycleGAN, we filtered the faces younger than 35 and older than 65. After that, we create corresponding pairs and use them as input for the model. Correspondingly, we are training GAN-s that are connected via cycle-consistency loss (as shown in the picture. Eventually, we are getting to generators, the one that ages a person and the other one, which de-ages.
 
