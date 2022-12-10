@@ -20,9 +20,9 @@ We are using [Cross-Age Reference Coding for the Age-Invariant Face Recognition 
 
 ## Modeling
 
-* ### [CycleGAN]()
+* ### [CycleGAN](https://arxiv.org/abs/1703.10593)
 
-![CycleGAN](../images/CycleGAN.png)
+![CycleGAN](../images/CycleGAN.png) "<br/><img src='/images/CycleGAN.png'>"
 
 For cycleGAN, we filtered the faces younger than 35 and older than 65. After that, we create corresponding pairs and use them as input for the model. Correspondingly, we are training GAN-s that are connected via cycle-consistency loss (as shown in the picture. Eventually, we are getting to generators, the one that ages a person and the other one, which de-ages.
 
@@ -69,5 +69,5 @@ As we can see, Age Transformation via the Style-Based Regression Model outperfor
 
 ## GitHub Repo
 
-[CycleGAN](https://github.com/AleksandrSim/MSA_495_project)
+[CycleGAN](https://github.com/AleksandrSim/MSA_495_project), 
 [IPCGAN](https://github.com/AleksandrSim/AleksandrSim-COMP_SCI_496-0_final_project)
