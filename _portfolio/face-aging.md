@@ -3,6 +3,7 @@ title: "Face Aging with Different GAN-s Architectures"
 excerpt: "Generating portraits of individuals at different age of their life using CycleGAN, IPCGAN, and Style-Based Regression Model<br/><img src='/images/face-aging-cover.png'>"
 collection: portfolio
 ---
+[Aleksandr Simonyan](https://github.com/AleksandrSim), [Tianchang Li](https://github.com/LTCrazy])
 
 ## Motivation
 
