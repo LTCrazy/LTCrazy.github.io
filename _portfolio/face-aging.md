@@ -22,13 +22,13 @@ We are using [Cross-Age Reference Coding for the Age-Invariant Face Recognition 
 
 * ## [CycleGAN]()
 
-[CycleGAN](https://github.com/LTCrazy/LTCrazy.github.io/blob/master/images/CycleGAN.png)
+![CycleGAN](/LTCrazy.github.io/images/CycleGAN.png)
 
 For cycleGAN, we filtered the faces younger than 35 and older than 65. After that, we create corresponding pairs and use them as input for the model. Correspondingly, we are training GAN-s that are connected via cycle-consistency loss (as shown in the picture. Eventually, we are getting to generators, the one that ages a person and the other one, which de-ages.
 
 * ## [IPCGAN](https://ieeexplore.ieee.org/document/8578926)
 
-[IPCGAN](https://github.com/LTCrazy/LTCrazy.github.io/blob/master/images/IPCGAN.png)
+![IPCGAN](https://github.com/LTCrazy/LTCrazy.github.io/blob/master/images/IPCGAN.png)
 
 IPCGAN is more challenging to train than CycleGAN since, for each iteration, we are generating 5 fake images corresponding to five progressing aging groups (20+,30+,40+,50+,60+). IPCGAN contains an additional age classifier that ensures that generated image falls into the target age. The value of IPCGAN is that it allows us to specify the exact age group we want our generated image to correspond to, making the model more flexible than CycleGAN.
 
