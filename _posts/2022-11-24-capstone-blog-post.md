@@ -1,5 +1,5 @@
 ---
-title: 'Respond to Limited or No Labeled Data in The Realm Of NLP'
+title: 'Respond to Limited or No Labeled Data in The Realm of NLP'
 date: 2022-11-24
 permalink: /posts/2022/11/capstone_blog_post/
 tags:
