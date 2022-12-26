@@ -64,5 +64,3 @@ Since the pre-trained model has demonstrated to have a good understanding of the
 ***4. Human in the loop***
 
 Last but not the least, our coach client brought in a great practice in all product development, which is to continuously improve the algorithm by welcoming users to pick out mis-predictions given specific contexts they consider. Don’t be struggled to make a perfect model all at once. Often time it’s impossible too. Instead, having the initial users contribute to the development while benefiting them with the existing functions.
-
-
