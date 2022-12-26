@@ -14,7 +14,7 @@ These language models have evolved to comprehend syntax and semantics well enoug
 
 In this blog post, I would like to introduce a few approaches that we took in our NLP capstone project with Adobe. Leveraging a few thousand training data points and machine learning techniques, we managed to design cool functions for business contract analysis and scale up to any given contract.
 
-## Project Background
+# Project Background
 
 To begin with, our client, Document Intelligence Labs (DIL) at Adobe Research, provided us a collection of raw business contracts, few thousand sentences with labeled condition and action phrases, and a completely open-ended problem statement that has something to do with condition clauses. 
 
@@ -32,9 +32,9 @@ So far, none of our ideas were heading towards a bright, certain direction. At t
 3. Incorporating large language models pre-trained on massive data
 4. Involving human in the loop 
 
-## Detailed Approaches
+# Detailed Approaches
 
-***1. Unstructured to structured, deep net to classic machine learning***
+## *1. Unstructured to structured, deep net to classic machine learning*
 
 Having a model that extracts condition clauses from raw contracts is a huge scope for the number of labeled clauses we have. The first thing I did was to shrink the search space by defining the model to be a binary classifier. This way, the scope is down to predicting yes or no with possibly a classic machine learning algorithm which involves much fewer parameters, hence much smaller dataset required. 
 
@@ -48,11 +48,11 @@ A variation of this approach to construct dataset is to take out the labeled con
 <br/><img src='/images/Picture_frame2.png' width="600"> 
 <br/><em>Caption: : illustration of data construction with partitioned sentences</em>
 
-***2. Supervised to semi-supervised learning***
+## *2. Supervised to semi-supervised learning*
 
 Since we lack the risk level labeling for either sentences or documents, we are limited outside of supervised learning. Our solution to this struggle came from a collection of ideas of my wise teammates. We decided to label a few classic documents high, medium, or low risk as reference. The better version of this in real products is to have users upload their previous contracts as templates. By calculating the semantic similarity between these and a new contract, we can estimate its risk level.
 
-***3. Incorporating large pre-trained language models***
+## *3. Incorporating large pre-trained language models*
 
 In the task of categorizing risk types, my teammate took advantage of the BERTopic, a transformer-based language model pretrained on massive data, and categorized the likely topic each word in a condition clause belongs to. Looking at all words in a clause, he was able to pick out the most likely topic this clause falls into. The topics we considered include financial, legal, security, and reputation risk. The chart below gives some examples of the most representative words in each topic.
 
@@ -61,6 +61,6 @@ In the task of categorizing risk types, my teammate took advantage of the BERTop
 
 Since the pre-trained model has demonstrated to have a good understanding of the semantics of English sentences, we bypassed the challenge of training such a model from scratch. Essentially, by using the pre-trained model, we gratefully stand on the shoulder of the giants. 
 
-***4. Human in the loop***
+## *4. Human in the loop*
 
 Last but not the least, our coach client brought in a great practice in all product development, which is to continuously improve the algorithm by welcoming users to pick out mis-predictions given specific contexts they consider. Don’t be struggled to make a perfect model all at once. Often time it’s impossible too. Instead, having the initial users contribute to the development while benefiting them with the existing functions.
