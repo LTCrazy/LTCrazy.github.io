@@ -33,7 +33,6 @@ So far, none of our ideas were heading towards a bright, certain direction. At t
 4. Involving human in the loop 
 
 # Detailed Approaches
-
 ## *1. Unstructured to structured, deep net to classic machine learning*
 
 Having a model that extracts condition clauses from raw contracts is a huge scope for the number of labeled clauses we have. The first thing I did was to shrink the search space by defining the model to be a binary classifier. This way, the scope is down to predicting yes or no with possibly a classic machine learning algorithm which involves much fewer parameters, hence much smaller dataset required. 
@@ -46,7 +45,7 @@ Then in terms of constructing data points, I come up with two approaches. One is
 A variation of this approach to construct dataset is to take out the labeled condition clauses from each sentence as a positive data point and take the rest pieces of the sentences as negative points. This is illustrated below. This approach generates much fewer data points (~ 5k) but greatly suits the classic sentiment analysis algorithm, Naïve Bayes. With this approach, I obtained a model with a great precision score which even better suits our use case.
 
 <br/><img src='/images/Picture_frame2.png' width="600"> 
-<br/><em>Caption: : illustration of data construction with partitioned sentences</em>
+<br/><em>Caption: illustration of data construction with partitioned sentences</em>
 
 ## *2. Supervised to semi-supervised learning*
 
@@ -57,7 +56,7 @@ Since we lack the risk level labeling for either sentences or documents, we are 
 In the task of categorizing risk types, my teammate took advantage of the BERTopic, a transformer-based language model pretrained on massive data, and categorized the likely topic each word in a condition clause belongs to. Looking at all words in a clause, he was able to pick out the most likely topic this clause falls into. The topics we considered include financial, legal, security, and reputation risk. The chart below gives some examples of the most representative words in each topic.
 
 <br/><img src='/images/Picture_BERTopic.png' width="600"> 
-<br/><em>Caption: : top words identified for each relevant topic</em>
+<br/><em>Caption: top words identified for each relevant topic</em>
 
 Since the pre-trained model has demonstrated to have a good understanding of the semantics of English sentences, we bypassed the challenge of training such a model from scratch. Essentially, by using the pre-trained model, we gratefully stand on the shoulder of the giants. 
 
