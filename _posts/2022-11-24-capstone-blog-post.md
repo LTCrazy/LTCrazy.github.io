@@ -22,7 +22,7 @@ Before anything can be done, we need more data. We urgently need some tool to ma
 
 With the collaborative skillsets of the team and a number of debates, we narrowed our topic down to building a risk analyzer for supply contracts embedded in Adobe Acrobat that annotate the risk level and risk type of each condition clause. The prototyped implementation of this idea is shown below. Then here comes our second challenge which is again the labeling of risk level and type.
 
-<br/><img src='/images/Picture_proto.png' width="600"> 
+<br/><img src='/images/Picture_proto.png' width="800"> 
 <br/><em>Caption: The de-identified prototype of the front-end development. Client company info was deidentified.</em>
 
 So far, none of our ideas were heading towards a bright, certain direction. At that moment, we went back and forth on what was feasible in our objectives and made trials and errors with the technical approaches. Eventually, we found the following methods successful in addressing or bypassing the problem of lack of data in this project. I will be unwinding each of them in the rest of the post. Hopefully, these would offer an idea or two to those who are suffering from the same issue.
@@ -39,12 +39,12 @@ Having a model that extracts condition clauses from raw contracts is a huge scop
 
 Then in terms of constructing data points, I come up with two approaches. One is to treat each contract as a block of text and run a sliding window down through it. At each position, words within the window are collected as one data point. Depending on whether this window falls within a condition clause, the data point is labeled as 1 or 0. The graph below illustrates this idea. With this approach, we generated ~330k data points. For inference, contracts are broken down in the same way and consecutive positive predictions with high confidence are predicted as condition clauses. This structured dataset allowed me to apply algorithms like KNN and gradient boosting. With a few other tricks, this yielded a nice accuracy (81%).
 
-<br/><img src='/images/Picture_frame1.png' width="600"> 
+<br/><img src='/images/Picture_frame1.png' width="800"> 
 <br/><em>Caption: illustration of data construction with a sliding text window</em>
 
 A variation of this approach to construct dataset is to take out the labeled condition clauses from each sentence as a positive data point and take the rest pieces of the sentences as negative points. This is illustrated below. This approach generates much fewer data points (~ 5k) but greatly suits the classic sentiment analysis algorithm, Naïve Bayes. With this approach, I obtained a model with a great precision score which even better suits our use case.
 
-<br/><img src='/images/Picture_frame2.png' width="600"> 
+<br/><img src='/images/Picture_frame2.png' width="800"> 
 <br/><em>Caption: illustration of data construction with partitioned sentences</em>
 
 ## *2. Supervised to semi-supervised learning*
@@ -55,7 +55,7 @@ Since we lack the risk level labeling for either sentences or documents, we are 
 
 In the task of categorizing risk types, my teammate took advantage of the BERTopic, a transformer-based language model pretrained on massive data, and categorized the likely topic each word in a condition clause belongs to. Looking at all words in a clause, he was able to pick out the most likely topic this clause falls into. The topics we considered include financial, legal, security, and reputation risk. The chart below gives some examples of the most representative words in each topic.
 
-<br/><img src='/images/Picture_BERTopic.png' width="600"> 
+<br/><img src='/images/Picture_BERTopic.png' width="800"> 
 <br/><em>Caption: top words identified for each relevant topic</em>
 
 Since the pre-trained model has demonstrated to have a good understanding of the semantics of English sentences, we bypassed the challenge of training such a model from scratch. Essentially, by using the pre-trained model, we gratefully stand on the shoulder of the giants. 
