@@ -1,7 +1,7 @@
 ---
 title: "Interpreting Polygenic Score Effects in Sibling Analysis"
 collection: publications
-permalink: /publication/2021-07-16-PGS-in-sibling-analysis.md
+permalink: /publication/2021-07-16-PGS-in-sibling-analysis
 excerpt: 'This paper is about pointing out the false assumptions in the Genome-wide sibling analysis method that has been widely used in the field of Genetics study.'
 date: 2021-07-16
 venue: 'bioRxiv'
